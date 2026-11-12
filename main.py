@@ -52,3 +52,15 @@ def dividir(datos: Operacion):
             detail="No se puede dividir entre cero"
         )
     return {"resultado": datos.a / datos.b}
+    
+    
+# ----------------------------
+# GET: Verificar estado de la API
+# ----------------------------
+@app.get("/health", status_code=status.HTTP_200_OK)
+def health():
+    """
+    Verifica que el servidor esté funcionando.
+    Retorna el estado de la API.
+    """
+    return {"status": "ok"}
